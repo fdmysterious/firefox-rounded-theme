@@ -147,30 +147,35 @@ Firefox `userChrome.css` for Tree Style Tab
 
 /* Shrink sidebar until hovered */
 :root {
-  --thin-tab-width: 30px;
+  --thin-tab-width: 35px;
   --wide-tab-width: 300px;
 }
-#sidebar-box:not([sidebarcommand="treestyletab_piro_sakura_ne_jp-sidebar-action"]) {
-  min-width: var(--wide-tab-width) !important;
-  max-width: none !important;
+
+#sidebar
+{
+	transition: all 300ms !important;
+	width: var(--thin-tab-width) !important;
 }
-#sidebar-box[sidebarcommand="treestyletab_piro_sakura_ne_jp-sidebar-action"] {
-  overflow: hidden !important;
+
+#sidebar-box[sidebarcommand="treestyletab_piro_sakura_ne_jp-sidebar-action"]
+{
+  overflow: visible !important;
   position: relative !important;
   transition: all 300ms !important;
-  /*transition: all 0ms 0s !important;*/
+  width: var(--thin-tab-width) !important;
   min-width: var(--thin-tab-width) !important;
   max-width: var(--thin-tab-width) !important;
   z-index: 2;
 }
-#sidebar-box[sidebarcommand="treestyletab_piro_sakura_ne_jp-sidebar-action"]:hover,
-#sidebar-box[sidebarcommand="treestyletab_piro_sakura_ne_jp-sidebar-action"] #sidebar {
-  /*transition-delay: 0s !important;*/
-  transition: all 300ms !important;
+
+#sidebar:hover
+{
+	width: var(--wide-tab-width) !important;
+}
+
+#sidebar-box[sidebarcommand="treestyletab_piro_sakura_ne_jp-sidebar-action"]:hover
+{
+  width: var(--wide-tab-width) !important;
   min-width: var(--wide-tab-width) !important;
   max-width: var(--wide-tab-width) !important;
-  z-index: 1;
-}
-#sidebar-box[sidebarcommand="treestyletab_piro_sakura_ne_jp-sidebar-action"]:hover {
-  margin-right: calc((var(--wide-tab-width) - var(--thin-tab-width)) * -1) !important;
 }
