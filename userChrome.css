@@ -1,4 +1,4 @@
-#appcontent
+/*#appcontent
   > #tabbrowser-tabbox
   > #tabbrowser-tabpanels
   > .deck-selected
@@ -17,6 +17,17 @@
   background-image: var(--lwt-header-image), var(--lwt-additional-images) !important;
   background-repeat: no-repeat, var(--lwt-background-tiling) !important;
   background-position: right top, var(--lwt-background-alignment) !important;
+}
+*/
+
+#tabbrowser-tabbox browser {
+	border-radius: 10px;
+	margin: 8px;
+}
+
+#tabbrowser-tabbox browser[src="about:devtools-toolbox"] {
+	border-radius: 0px !important;
+	margin: 0px !important;
 }
 
 
@@ -179,3 +190,4 @@ Firefox `userChrome.css` for Tree Style Tab
   min-width: var(--wide-tab-width) !important;
   max-width: var(--wide-tab-width) !important;
 }
+
